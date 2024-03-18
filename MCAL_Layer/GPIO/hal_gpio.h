@@ -1,6 +1,6 @@
 /* 
  * File:   hal_gpio.h
- * Author: imena
+ * Author: imina
  *
  * Created on November 9, 2023, 3:51 PM
  */
