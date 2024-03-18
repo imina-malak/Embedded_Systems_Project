@@ -255,7 +255,7 @@ Std_ReturnType gpio_port_read_logic(const Port_index_t port,uint8 *_Logic){
         ret = E_NOT_OK;
     }else
     {
-        *_Logic=*lat_register[port];
+        *_Logic=*port_register[port];
     }
     
     return ret;
