@@ -33,6 +33,21 @@ typedef struct{
 }button_t;
 
 /* section: functions Declarations */
+/**
+ * @brief: function to initialize push button 
+ * @param: btn: the struct which has all info about the pin
+ * @return the status of the function 
+ *            (E_OK):     the function done successfully 
+ *            (E_NOT_OK): the function has issue to perform 
+ */
 Std_ReturnType button_initialize(const button_t *btn);
+/**
+ * @brief: functon to read the button status(pressed or released)
+ * @param btn: the struct which has all info about the pin
+ * @param btn_status: pointer to save the button status(pressed or released)
+ * @return the status of the function 
+ *            (E_OK):     the function done successfully 
+ *            (E_NOT_OK): the function has issue to perform 
+ */
 Std_ReturnType button_read_status(const button_t *btn,button_status_t *btn_status); 
 #endif	/* ECU_BUTTON_H */
