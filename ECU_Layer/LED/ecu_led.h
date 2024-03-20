@@ -23,14 +23,13 @@ typedef enum{
 }led_status_t;
 
 typedef struct{
-    uint8 port_name:4;             // number of the port(0 to 4)(@Port_index_t)
-    uint8 pin:3;                   // number of the port(0 to 7)(@Pin_index_t)
-    uint8 led_status:1;     // determine the led status  (@led_status_t)
+    Pin_config_t led_config;
+    uint8 led_status:1;            // determine the led status  (@led_status_t)
 }led_t;
 /* section: functions Declarations */
 /**
  * @brief: function to initialize led
- * @param: led: pointer to led
+ * @param: led: the struct which has all info about the pin
  * @return the status of the function 
  *            (E_OK):     the function done successfully 
  *            (E_NOT_OK): the function has issue to perform 
@@ -46,7 +45,7 @@ Std_ReturnType led_initialize(const led_t *led);
 Std_ReturnType led_turn_on(const led_t *led);
 /**
  * @brief: function to turn off led
- * @param: led: pointer to led
+ * @param: led: the struct which has all info about the pin
  * @return the status of the function 
  *            (E_OK):     the function done successfully 
  *            (E_NOT_OK): the function has issue to perform 
@@ -54,7 +53,7 @@ Std_ReturnType led_turn_on(const led_t *led);
 Std_ReturnType led_turn_off(const led_t *led);
 /**
  * @brief: function to toggle led
- * @param: led: pointer to led
+ * @param: led: the struct which has all info about the pin
  * @return the status of the function 
  *            (E_OK):     the function done successfully 
  *            (E_NOT_OK): the function has issue to perform 
